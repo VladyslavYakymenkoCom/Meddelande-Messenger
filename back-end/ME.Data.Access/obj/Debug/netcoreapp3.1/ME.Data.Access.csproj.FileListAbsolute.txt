@@ -1,0 +1,5 @@
+C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access\bin\Debug\netcoreapp3.1\ME.Data.Access.deps.json
+C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access\bin\Debug\netcoreapp3.1\ME.Data.Access.dll
+C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access\obj\Debug\netcoreapp3.1\ME.Data.Access.csprojAssemblyReference.cache
+C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access\obj\Debug\netcoreapp3.1\ME.Data.Access.AssemblyInfoInputs.cache
+C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access\obj\Debug\netcoreapp3.1\ME.Data.Access.AssemblyInfo.cs
