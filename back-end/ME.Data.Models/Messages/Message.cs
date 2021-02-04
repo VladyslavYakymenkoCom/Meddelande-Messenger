@@ -1,6 +1,5 @@
 ﻿using ME.Data.Models.Users;
 using System;
-using System.Collections.Generic;
 
 namespace ME.Data.Models.Messages
 {
@@ -11,7 +10,7 @@ namespace ME.Data.Models.Messages
         Abstractions.IDeactivateableEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
-        public Guid AuthotId { get; set; }
+        public Guid AuthorId { get; set; }
 
         public string Body { get; set; }
         public int State { get; set; }

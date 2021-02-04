@@ -1,8 +1,0 @@
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\bin\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.deps.json
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\bin\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.dll
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\obj\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.csprojAssemblyReference.cache
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\obj\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.AssemblyInfoInputs.cache
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\obj\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.AssemblyInfo.cs
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\bin\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.runtimeconfig.json
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\bin\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.runtimeconfig.dev.json
-C:\Drive\Code\Projects\Meddelande\back-end\ME.Data.Access.Abstractions\obj\Debug\netcoreapp3.1\ME.Data.Access.Abstractions.genruntimeconfig.cache

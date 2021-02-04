@@ -1,9 +1,0 @@
-C:\Drive\Code\Projects\Meddelande\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Drive\Code\Projects\Meddelande\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Drive\Code\Projects\Meddelande\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\Meddelande.csprojAssemblyReference.cache
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\Meddelande.AssemblyInfoInputs.cache
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\Meddelande.AssemblyInfo.cs
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\Meddelande.RazorTargetAssemblyInfo.cache
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\staticwebassets\Meddelande.StaticWebAssets.Manifest.cache
-C:\Drive\Code\Projects\Meddelande\obj\Debug\netcoreapp3.1\staticwebassets\Meddelande.StaticWebAssets.xml
