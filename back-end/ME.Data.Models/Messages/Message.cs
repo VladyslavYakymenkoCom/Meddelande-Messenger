@@ -13,7 +13,7 @@ namespace ME.Data.Models.Messages
         public Guid AuthorId { get; set; }
 
         public string Body { get; set; }
-        public int State { get; set; }
+        public int State { get; set; }  // TODO: Create UserMessageState to diff users would be able to see states in group chat;
         public bool IsDeactivated { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
