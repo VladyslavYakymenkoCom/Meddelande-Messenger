@@ -2,6 +2,7 @@
 using ME.Data.Models.Messages;
 using ME.Data.Models.Users;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace ME.Data.Access.Context
 {
@@ -24,5 +25,10 @@ namespace ME.Data.Access.Context
         public DbSet<Chat> Chats { get; set; }
         public DbSet<UserChat> UserChats { get; set; }
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
 }

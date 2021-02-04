@@ -22,37 +22,37 @@ namespace ME.Data.Access.Base
             Table = Context.Set<TEntity>();
         }
 
-        public TEntity Create(TEntity entity)
+        public virtual TEntity Create(TEntity entity)
         {
             return Table.Add(entity).Entity;
         }
 
-        public async Task<TEntity> CreateAsync(TEntity entity)
+        public virtual async Task<TEntity> CreateAsync(TEntity entity)
         {
             return (await Table.AddAsync(entity)).Entity;
         }
 
-        public TEntity First(ISpecification<TEntity> pattern)
+        public virtual TEntity First(ISpecification<TEntity> pattern)
         {
             return Table.FirstOrDefault(pattern.ToExpression());
         }
 
-        public async Task<TEntity> FirstAsync(ISpecification<TEntity> pattern)
+        public virtual async Task<TEntity> FirstAsync(ISpecification<TEntity> pattern)
         {
             return await Table.FirstOrDefaultAsync(pattern.ToExpression());
         }
 
-        public IQueryable<TEntity> GetAll(ISpecification<TEntity> pattern)
+        public virtual IQueryable<TEntity> GetAll(ISpecification<TEntity> pattern)
         {
             return Table.Where(pattern.ToExpression());
         }
 
-        public IQueryable<TEntity> GetAll()
+        public virtual IQueryable<TEntity> GetAll()
         {
             return Table.AsQueryable();
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             Table.Remove(entity);
         }
