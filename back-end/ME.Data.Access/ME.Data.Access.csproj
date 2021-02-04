@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ME.Data.Access.Abstractions\ME.Data.Access.Abstractions.csproj" />
+    <ProjectReference Include="..\ME.Data.Models\ME.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>
