@@ -1,6 +1,7 @@
 ﻿using ME.Data.Access.Abstractions.Repositories;
 using ME.Data.Access.Abstractions.UnitOfWork;
 using ME.Data.Access.Context;
+using ME.Data.Access.Repositories;
 using System;
 using System.Threading.Tasks;
 
@@ -11,14 +12,18 @@ namespace ME.Data.Access.UnitOfWork
         private bool disposed = false;
         private MeddelandeContext _context;
 
-        public IUserRepository UserRepository { get; set; }
-        public IMessageRepository MessageRepository { get; set; }
-        public IChatRepository ChatRepository { get; set; }
+        public IUserRepository UserRepository { get; }
+        public IMessageRepository MessageRepository { get; }
+        public IChatRepository ChatRepository { get; }
 
         // TODO: Create factory;
         public UnitOfWork(MeddelandeContext context)
         {
             _context = context;
+
+            UserRepository = new UserRepository(_context);
+            MessageRepository = new MessageRepository(_context);
+            ChatRepository = new ChatRepository(_context);
         }
 
         public void Commit()

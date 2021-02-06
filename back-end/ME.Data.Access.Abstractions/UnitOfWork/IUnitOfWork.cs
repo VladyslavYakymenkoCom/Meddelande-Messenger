@@ -8,15 +8,15 @@ namespace ME.Data.Access.Abstractions.UnitOfWork
     {
         // TODO: Singletons;
         #region Users
-        IUserRepository UserRepository { get; set; }
+        IUserRepository UserRepository { get; }
         #endregion
 
         #region Messages
-        IMessageRepository MessageRepository { get; set; }
+        IMessageRepository MessageRepository { get; }
         #endregion
 
         #region Chats
-        IChatRepository ChatRepository { get; set; }
+        IChatRepository ChatRepository { get; }
         #endregion
 
         void Commit();
