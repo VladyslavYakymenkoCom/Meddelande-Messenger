@@ -8,7 +8,7 @@ namespace ME.Business.Logic.Abstraction.Validators.Users
         public UserToCreateModelValidator()
         {
             RuleFor(u => u.Tag).NotNull().NotEmpty().MinimumLength(MinTagLength).MaximumLength(MaxTagLength);
-            RuleFor(u => u.Password).NotNull().NotEmpty().MinimumLength(MinPasswordLength).MaximumLength(MaxPasswordLength);
+            RuleFor(u => u.Password).NotNull().NotEmpty().Matches(PasswordRegex);
         }
     }
 }
