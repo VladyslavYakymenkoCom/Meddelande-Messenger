@@ -16,8 +16,8 @@ namespace ME.Business.Logic.Abstraction.Models.Chats
         public DateTime? UpdatedAt { get; set; }
 
         #region Navigation properties
-        public ICollection<MessageModel> Messages { get; set; } = new List<MessageModel>();
-        public ICollection<UserModel> Participants { get; set; } = new List<UserModel>();
+        public IEnumerable<MessageModel> Messages { get; set; } = new List<MessageModel>();
+        public IEnumerable<UserModel> Participants { get; set; } = new List<UserModel>();
         #endregion
     }
 }

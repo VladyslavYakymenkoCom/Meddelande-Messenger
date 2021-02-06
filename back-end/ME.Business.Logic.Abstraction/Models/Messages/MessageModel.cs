@@ -1,4 +1,5 @@
-﻿using ME.Business.Logic.Abstraction.Models.Users;
+﻿using ME.Business.Logic.Abstraction.Enums;
+using ME.Business.Logic.Abstraction.Models.Users;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,7 @@ namespace ME.Business.Logic.Abstraction.Models.Messages
         public DateTime? UpdatedAt { get; set; }
 
         #region Navigation properties
-        public virtual UserModel Author { get; set; }
+        public UserModel Author { get; set; }
         #endregion
     }
 }

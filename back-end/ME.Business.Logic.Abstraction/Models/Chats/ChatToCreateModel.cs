@@ -8,7 +8,7 @@ namespace ME.Business.Logic.Abstraction.Models.Chats
         public string Title { get; set; }
 
         #region Navigation properties
-        public IEnumerable<Guid> ParticipantIds { get; set; } = new List<Guid>();
+        public IEnumerable<Guid> ParticipantIds { get; set; } = new List<Guid>(); // TODO: Add Creator;
         #endregion
     }
 }
