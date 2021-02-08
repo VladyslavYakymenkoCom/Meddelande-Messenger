@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ME.Business.Logic.Abstraction\ME.Business.Logic.Abstraction.csproj" />
+    <ProjectReference Include="..\ME.Data.Access.Abstractions\ME.Data.Access.Abstractions.csproj" />
     <ProjectReference Include="..\ME.Data.Models\ME.Data.Models.csproj" />
   </ItemGroup>
 

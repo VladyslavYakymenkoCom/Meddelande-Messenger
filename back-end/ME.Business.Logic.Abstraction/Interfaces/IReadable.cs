@@ -5,6 +5,6 @@ namespace ME.Business.Logic.Abstraction.Interfaces
 {
     public interface IReadable<TRes> where TRes : class
     {
-        Task<TRes> FirstAsync(Guid id);
+        Task<TRes> GetByIdAsync(Guid id);
     }
 }

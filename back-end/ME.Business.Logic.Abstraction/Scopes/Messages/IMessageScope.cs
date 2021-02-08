@@ -6,6 +6,7 @@ using ME.Business.Logic.Abstraction.Models.Messages;
 namespace ME.Business.Logic.Abstraction.Scopes.Messages
 {
     public interface IMessageScope :        
+        IReadable<MessageModel>,
         ICreateable<MessageToCreateModel, MessageModel>,
         IUpdateable<MessageToUpdateModel, MessageModel>,
         IDeleteable
