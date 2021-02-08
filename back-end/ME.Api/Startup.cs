@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using Mapster;
+using ME.Business.Logic.Scopes.Chats;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +20,9 @@ namespace Meddelande
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //TODO: Config Mapster for preserving references, ignore nulls;
+            TypeAdapterConfig.GlobalSettings.Scan(typeof(ChatMapsterRegister).Assembly);
         }
 
         public IConfiguration Configuration { get; }

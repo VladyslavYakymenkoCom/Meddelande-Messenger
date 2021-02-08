@@ -12,6 +12,6 @@ namespace ME.Business.Logic.Abstraction.Scopes.Chats
         IUpdateable<ChatToUpdateModel, ChatModel>,
         IDeleteable
     {
-        Task<IEnumerable<ChatModel>> GetForUser(Guid userId);
+        Task<IEnumerable<ChatListItemModel>> GetForUser(Guid userId);
     }
 }

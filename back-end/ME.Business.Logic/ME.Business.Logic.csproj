@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.CommonTools" Version="2.0.2" />
+    <PackageReference Include="Mapster" Version="7.1.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ME.Business.Logic.Abstraction\ME.Business.Logic.Abstraction.csproj" />
     <ProjectReference Include="..\ME.Data.Models\ME.Data.Models.csproj" />
   </ItemGroup>
 
