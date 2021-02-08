@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using FluentValidation;
+using ME.Business.Logic.Abstraction.Validators.Users;
 
 namespace ME.Business.Logic.Abstraction.Models.Users
 {
@@ -9,7 +10,9 @@ namespace ME.Business.Logic.Abstraction.Models.Users
 
         public string Tag { get; set; }
 
-        #region Navigation properties
-        #endregion
+        public void ValidateAndThrow()
+        {
+            new UserToUpdateModelValidator().ValidateAndThrow(this);
+        }
     }
 }

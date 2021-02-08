@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using FluentValidation;
+using ME.Business.Logic.Abstraction.Validators.Messages;
 
 namespace ME.Business.Logic.Abstraction.Models.Messages
 {
@@ -10,5 +11,10 @@ namespace ME.Business.Logic.Abstraction.Models.Messages
         public string Body { get; set; }
         #region Navigation properties
         #endregion
+
+        public void ValidateAndThrow()
+        {
+            new MessageToUpdateModelValidator().ValidateAndThrow(this);
+        }
     }
 }

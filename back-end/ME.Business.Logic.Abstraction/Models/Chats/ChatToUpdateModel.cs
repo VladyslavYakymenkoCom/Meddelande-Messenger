@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using FluentValidation;
+using ME.Business.Logic.Abstraction.Validators.Chats;
 
 namespace ME.Business.Logic.Abstraction.Models.Chats
 {
@@ -12,5 +13,10 @@ namespace ME.Business.Logic.Abstraction.Models.Chats
 
         #region Navigation properties
         #endregion
+
+        public void ValidateAndThrow()
+        {
+            new ChatToUpdateModelValidator().ValidateAndThrow(this);
+        }
     }
 }
