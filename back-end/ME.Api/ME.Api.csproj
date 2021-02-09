@@ -15,5 +15,9 @@
     <ProjectReference Include="..\ME.Business.Logic\ME.Business.Logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 
 </Project>
