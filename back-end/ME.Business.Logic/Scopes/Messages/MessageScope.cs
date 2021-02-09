@@ -28,7 +28,7 @@ namespace ME.Business.Logic.Scopes.Messages
         #region Crud
         public async Task<MessageModel> GetByIdAsync(Guid id)
         {
-            var message = await _unitOfWork.MessageRepository.FirstAsync(
+            var message = await _unitOfWork.Message.FirstAsync(
                 new ByIdSpecification<Message>(id)
                 && new ActiveSpecification<Message>()
                 );
@@ -43,7 +43,7 @@ namespace ME.Business.Logic.Scopes.Messages
             model.ValidateAndThrow();
 
             var entityToCreate = model.Adapt<Message>();
-            var message = await _unitOfWork.MessageRepository.CreateAsync(entityToCreate);
+            var message = await _unitOfWork.Message.CreateAsync(entityToCreate);
 
             await _unitOfWork.CommitAsync();
             return await GetByIdAsync(message.Id);
@@ -53,7 +53,7 @@ namespace ME.Business.Logic.Scopes.Messages
         {
             model.ValidateAndThrow();
 
-            var message = await _unitOfWork.MessageRepository.FirstAsync(new ByIdSpecification<Message>(model.Id));
+            var message = await _unitOfWork.Message.FirstAsync(new ByIdSpecification<Message>(model.Id));
             if (message is null)
                 throw new NotFoundException();
 
@@ -66,7 +66,7 @@ namespace ME.Business.Logic.Scopes.Messages
 
         public void Delete(Guid id)
         {
-            var message = _unitOfWork.MessageRepository.First(new ByIdSpecification<Message>(id));
+            var message = _unitOfWork.Message.First(new ByIdSpecification<Message>(id));
             if (message is null)
                 throw new NotFoundException();
 
@@ -79,7 +79,10 @@ namespace ME.Business.Logic.Scopes.Messages
 
         public IEnumerable<MessageModel> GetForChat(Guid chatId)
         {
-            var messages = _unitOfWork.MessageRepository.GetAll(new MessageByChatIdSpecification(chatId))
+            var messages = _unitOfWork.Message.GetAll(
+                    new MessageByChatIdSpecification(chatId)
+                    && new ActiveSpecification<Message>()
+                    )
                 .Include(m => m.Author)
                 .ToImmutableList();
 

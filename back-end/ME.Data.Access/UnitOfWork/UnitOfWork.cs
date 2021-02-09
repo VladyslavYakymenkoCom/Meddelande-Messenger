@@ -12,18 +12,18 @@ namespace ME.Data.Access.UnitOfWork
         private bool disposed = false;
         private MeddelandeContext _context;
 
-        public IUserRepository UserRepository { get; }
-        public IMessageRepository MessageRepository { get; }
-        public IChatRepository ChatRepository { get; }
+        public IUserRepository User { get; }
+        public IMessageRepository Message { get; }
+        public IChatRepository Chat { get; }
 
         // TODO: Create factory;
         public UnitOfWork(MeddelandeContext context)
         {
             _context = context;
 
-            UserRepository = new UserRepository(_context);
-            MessageRepository = new MessageRepository(_context);
-            ChatRepository = new ChatRepository(_context);
+            User = new UserRepository(_context);
+            Message = new MessageRepository(_context);
+            Chat = new ChatRepository(_context);
         }
 
         public void Commit()
