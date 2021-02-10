@@ -6,7 +6,6 @@ namespace ME.Data.Access.Abstractions.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        // TODO: Singletons;
         #region Users
         IUserRepository User { get; }
         #endregion

@@ -1,4 +1,5 @@
 using Mapster;
+using ME.Api.Extensions;
 using ME.Business.Logic.Scopes.Chats;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,13 +21,17 @@ namespace ME.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Init(Configuration);
+
+            services.AddDatabase(); 
+            services.AddRepositories(); 
+            services.AddUnitOfWork();
+            services.AddScopes();  
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -35,9 +40,7 @@ namespace ME.Api
             }
 
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

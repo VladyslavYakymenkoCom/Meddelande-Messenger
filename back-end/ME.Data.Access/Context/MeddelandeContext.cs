@@ -6,9 +6,9 @@ using System.Reflection;
 
 namespace ME.Data.Access.Context
 {
-    public class MeddelandeContext : DbContext
+    public sealed class MeddelandeContext : DbContext
     {
-        public MeddelandeContext()
+        public MeddelandeContext(DbContextOptions<MeddelandeContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
@@ -29,6 +29,7 @@ namespace ME.Data.Access.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
