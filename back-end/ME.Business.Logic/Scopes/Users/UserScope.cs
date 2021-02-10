@@ -5,6 +5,7 @@ using Mapster;
 using ME.Business.Logic.Abstraction.Models.Users;
 using ME.Business.Logic.Abstraction.Scopes.Users;
 using ME.Business.Logic.Exceptions;
+using ME.Business.Logic.Helpers;
 using ME.Business.Logic.Specifications;
 using ME.Data.Access.Abstractions.UnitOfWork;
 using ME.Data.Models.Users;
@@ -39,14 +40,14 @@ namespace ME.Business.Logic.Scopes.Users
         {
             model.ValidateAndThrow();
 
+            var saltedPassword = CryptoHelper.GenerateSaltedHash(model.Password);
             var entityToCreate = model.Adapt<User>();
+            entityToCreate.HashPassword = saltedPassword.Hash;
+            entityToCreate.Salt = saltedPassword.Salt;
+
             var user = await _unitOfWork.User.CreateAsync(entityToCreate);
-
-            // TODO: Add hashing.
-            // user.HashPassword =
-            // user.Salt = 
-
             await _unitOfWork.CommitAsync();
+
             return await GetByIdAsync(user.Id);
         }
 
