@@ -10,7 +10,6 @@ namespace ME.Data.Access.Context
     {
         public MeddelandeContext(DbContextOptions<MeddelandeContext> options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
         #region User
