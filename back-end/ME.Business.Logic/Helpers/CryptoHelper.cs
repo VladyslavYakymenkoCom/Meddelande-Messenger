@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System;
 using System.Security.Cryptography;
+using System.Text;
+using FluentValidation.Results;
 
 namespace ME.Business.Logic.Helpers
 {
@@ -26,7 +28,12 @@ namespace ME.Business.Logic.Helpers
 
         public static bool IsHashValid(string input, string hash, string salt)
         {
-            return GenerateHash(input, salt) == hash;
+            var hashToCompare = GenerateHash(
+                input,
+                Encoding.ASCII.GetBytes(salt)
+                );
+
+            return Convert.ToBase64String(hashToCompare) == hash;
         }
 
         #region Private methods
@@ -37,7 +44,7 @@ namespace ME.Business.Logic.Helpers
                 salt,
                 prf: KeyDerivationPrf.HMACSHA1,
                 HashingIterationsCount,
-                HashSize 
+                HashSize
                 );
 
             return hash;
