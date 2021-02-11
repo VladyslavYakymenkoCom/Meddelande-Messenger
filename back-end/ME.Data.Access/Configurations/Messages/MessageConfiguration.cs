@@ -1,8 +1,9 @@
-﻿using ME.Data.Models.Messages;
+﻿using ME.Data.Models.Chats;
+using ME.Data.Models.Messages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ME.Data.Access.Configurations.Chats
+namespace ME.Data.Access.Configurations.Messages
 {
     public class MessageConfiguration : Base.Configuration, IEntityTypeConfiguration<Message>
     {
@@ -18,6 +19,11 @@ namespace ME.Data.Access.Configurations.Chats
             builder.HasOne(m => m.Author)
                 .WithMany()
                 .HasForeignKey(m => m.AuthorId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne<Chat>()
+                .WithMany(ch => ch.Messages)
+                .HasForeignKey(m => m.Id)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

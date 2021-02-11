@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ME.Data.Access.Configurations
+namespace ME.Data.Access.Configurations.Chats
 {
     public class ChatConfiguration : Base.Configuration, IEntityTypeConfiguration<Chat>
     {
@@ -14,11 +14,6 @@ namespace ME.Data.Access.Configurations
                 .HasMaxLength(MaxTitleLength)
                 .IsRequired();
             builder.Property(u => u.CreatedAt).IsRequired();
-
-            builder.HasOne(m => m.Messages)
-                .WithMany()
-                .HasForeignKey(m => m.Id)
-                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

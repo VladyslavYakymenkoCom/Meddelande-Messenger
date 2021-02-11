@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ME.Data.Access.Configurations
+namespace ME.Data.Access.Configurations.Users
 {
     public class UserConfiguration : Base.Configuration, IEntityTypeConfiguration<User>
     {

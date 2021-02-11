@@ -17,7 +17,7 @@ namespace ME.Data.Access.Base
     {
         protected DbSet<TEntity> Table;
 
-        public CrudRepository(MeddelandeContext context) : base(context)
+        protected CrudRepository(MeddelandeContext context) : base(context)
         {
             Table = Context.Set<TEntity>();
         }
