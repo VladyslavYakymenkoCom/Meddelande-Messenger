@@ -25,7 +25,7 @@ namespace ME.Business.Logic.Helpers
         {
             const string tag = "marcus@fa";
 
-            var user = _unitOfWork.User.FirstAsync(new UserByTagSpecification(tag));
+            var user = _unitOfWork.User.First(new UserByTagSpecification(tag));
             if (user != null)
                 return;
 

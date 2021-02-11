@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ME.Business.Logic.Abstraction.Scopes.Chats;
 using ME.Business.Logic.Abstraction.Scopes.Messages;
 using ME.Business.Logic.Abstraction.Scopes.Users;
+using ME.Business.Logic.Helpers;
 using ME.Business.Logic.Scopes.Chats;
 using ME.Business.Logic.Scopes.Messages;
 using ME.Business.Logic.Scopes.Users;
@@ -47,6 +48,7 @@ namespace ME.Api.Extensions
         public static void AddUnitOfWork(this IServiceCollection services)
         {
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<DatabaseInitializer>();
         }
 
         public static void AddScopes(this IServiceCollection services)
